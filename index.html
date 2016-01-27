@@ -50,7 +50,8 @@
                         </li>
                         <li><a href="contactus.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right" role="form">
+                    <!-- navbar form: code starts -->
+                    <!--form class="navbar-form navbar-right" role="form">
                         <div class="form-group">
                             <input type="email" class="form-control" name="email" placeholder="Email">
                         </div>
@@ -61,10 +62,40 @@
                             <input type="checkbox" name="rememberme" value=""><span style="color:white;">Remember me</span>
                         </label>
                         <button type="submit" class="btn btn-info">Sign In</button>
-                    </form>
+                    </form-->
+                    <!-- navbar form: code ends -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a data-toggle="modal" data-target="#loginModal">
+                            <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
+        <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Login </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <input type="email" size="15" class="form-control input-sm" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" size="15" class="form-control input-sm" name="password" placeholder="Password">
+                            </div>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="rememberme" value="">Remember me
+                            </label>
+                            <button type="submit" class="btn btn-info btn-sm">Sign In</button>
+                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <header class="jumbotron">
         <!-- Main component for a primary marketing message or call to action -->
             <div class="container">
@@ -80,7 +111,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-2">
                         <p style="padding:40px;"></p>                        
-                        <a href="#reserveTableRow" class="btn btn-warning btn-block">Reserve Table</a>
+                        <a href="#reserveTableRow" class="btn btn-warning btn-block" data-toggle="tooltip" data-placement="bottom" title="Or Call us at +852 12345678">Reserve Table</a>
                     </div>
                 </div>
             </div>
@@ -266,5 +297,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- include all compiled plugins (below) or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
     </body>
 </html>
